@@ -1,15 +1,15 @@
 {
   "stats": {
-    "suites": 2,
-    "tests": 3,
-    "passes": 2,
+    "suites": 3,
+    "tests": 4,
+    "passes": 3,
     "pending": 0,
     "failures": 1,
-    "start": "2023-08-07T14:52:26.907Z",
-    "end": "2023-08-07T14:52:30.755Z",
-    "duration": 3848,
-    "testsRegistered": 3,
-    "passPercent": 66.66666666666666,
+    "start": "2023-08-07T15:28:46.785Z",
+    "end": "2023-08-07T15:28:51.282Z",
+    "duration": 4497,
+    "testsRegistered": 4,
+    "passPercent": 75,
     "pendingPercent": 0,
     "other": 0,
     "hasOther": false,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "2b08496f-c497-480a-ada7-33e4fc939af6",
+      "uuid": "d17eaa21-3118-4154-8fa2-d94a5c8f1811",
       "title": "",
       "fullFile": "",
       "file": "",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "546cf5b4-8ff0-41c8-be35-ff10068151aa",
+          "uuid": "1765f897-f941-469b-a4c5-afdb175fc463",
           "title": "add todo tests",
           "fullFile": "C:\\Users\\Admin\\seleniumdemo\\test\\firsttest.js",
           "file": "\\test\\firsttest.js",
@@ -38,7 +38,7 @@
               "title": "succses fully add on todo list",
               "fullTitle": "add todo tests succses fully add on todo list",
               "timedOut": null,
-              "duration": 2106,
+              "duration": 2651,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -47,7 +47,7 @@
               "context": null,
               "code": "//lauch brwoser \n        let driver = await new Builder().forBrowser(\"chrome\").build();\n        //navigate url \n        await driver.get(\"https://lambdatest.github.io/sample-todo-app/\")\n        // add a todo\n        await driver.findElement(By.id(\"sampletodotext\")).sendKeys(\"Selenium Pratice\", Key.RETURN);\n        //assertion\n        let todoText = await driver.findElement(By.xpath(\"//li[last()]\")).getText().then(function(value){\n            return value\n        });\n        //assert use chai should\n        todoText.should.equal(\"Selenium Pratice\")\n        //close browser\n        await driver.quit();",
               "err": {},
-              "uuid": "7d059ae7-4b72-482c-b74e-aa1b5912944b",
+              "uuid": "ef3693a5-19b9-453e-8c56-578c73354437",
               "parentUUID": null,
               "isHook": false,
               "skipped": false
@@ -55,18 +55,57 @@
           ],
           "suites": [],
           "passes": [
-            "7d059ae7-4b72-482c-b74e-aa1b5912944b"
+            "ef3693a5-19b9-453e-8c56-578c73354437"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 2106,
+          "duration": 2651,
           "root": false,
           "rootEmpty": false,
           "_timeout": null
         },
         {
-          "uuid": "76c44822-1e9a-4f07-9fc0-95b594843ee2",
+          "uuid": "9d6a5300-8127-4cb8-bbbc-0eff785332d5",
+          "title": "sauce demo",
+          "fullFile": "C:\\Users\\Admin\\seleniumdemo\\test\\saucedemo.js",
+          "file": "\\test\\saucedemo.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "sauce demo",
+              "fullTitle": "sauce demo sauce demo",
+              "timedOut": null,
+              "duration": 3069,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//lauch brwoser \n        let driver = await new Builder().forBrowser(\"chrome\").build();\n        //navigate url \n        await driver.get(\"https://www.saucedemo.com/\")\n        const expectedTitle = 'Swag Labs';\n        const actualTitle = await driver.getTitle();\n        assert(actualTitle.includes(expectedTitle));\n    \n        //get value\n        const username = 'standard_user';\n        const password = 'secret_sauce';\n      \n        //login menggunakan value \n        await driver.findElement(By.id(\"user-name\")).sendKeys(username);\n        await driver.findElement(By.id(\"password\")).sendKeys(password);\n        await driver.findElement(By.id(\"login-button\")).click();\n        //assert url berhasil login\n        const currentUrl = await driver.getCurrentUrl();\n        assert.strictEqual(currentUrl, 'https://www.saucedemo.com/inventory.html');\n        // check out backpack\n        await driver.findElement(By.id(\"add-to-cart-sauce-labs-backpack\")).click()\n        await driver.findElement(By.xpath(\"(//a[@class='shopping_cart_link'])[1]\")).click()\n        await driver.findElement(By.id(\"checkout\")).click()\n        // value untuk isi form checkout\n        const firstname = 'vico';\n        const lastame = 'hadi';\n        const zipcode = '40284';\n        await driver.findElement(By.id(\"first-name\")).sendKeys(firstname);\n        await driver.findElement(By.id(\"last-name\")).sendKeys(lastame);\n        await driver.findElement(By.id(\"postal-code\")).sendKeys(zipcode);\n        await driver.findElement(By.id(\"continue\")).click();\n        // confirm harga backpack \n        const cartPriceElement = await driver.findElement(By.className('inventory_item_price'));\n        const cartPriceText = await cartPriceElement.getText();\n        const expectedPriceText = '$29.99';\n        assert.strictEqual(cartPriceText, expectedPriceText);\n        //melanjutkan checkout\n        await driver.findElement(By.id(\"finish\")).click()\n        const completeMessage = await driver.findElement(By.className('complete-header')).getText();\n        const expectedMessage = 'THANK YOU FOR YOUR ORDER!';\n        // Assersi pesan berhasil\n        assert.strictEqual(completeMessage.toUpperCase(), expectedMessage);\n        \n        //close browser\n        await driver.quit();",
+              "err": {},
+              "uuid": "c8ba38b1-e5df-4211-9404-2b4f2ba46fe0",
+              "parentUUID": null,
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "c8ba38b1-e5df-4211-9404-2b4f2ba46fe0"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 3069,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": null
+        },
+        {
+          "uuid": "d4b439a3-ebd3-4def-a1d0-6867124ddfea",
           "title": "add anothet todo tests",
           "fullFile": "C:\\Users\\Admin\\seleniumdemo\\test\\secondtest.js",
           "file": "\\test\\secondtest.js",
@@ -77,7 +116,7 @@
               "title": "succses fully add another on todo list",
               "fullTitle": "add anothet todo tests succses fully add another on todo list",
               "timedOut": null,
-              "duration": 2156,
+              "duration": 2680,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -86,7 +125,7 @@
               "context": null,
               "code": "//lauch brwoser \n        let driver = await new Builder().forBrowser(\"chrome\").build();\n        //navigate url \n        await driver.get(\"https://lambdatest.github.io/sample-todo-app/\")\n        // add a todo\n        await driver.findElement(By.id(\"sampletodotext\")).sendKeys(\"Selenium Pratice\", Key.RETURN);\n        //assertion\n        let todoText = await driver.findElement(By.xpath(\"//li[last()]\")).getText().then(function(value){\n            return value\n        });\n        //assert use chai should\n        todoText.should.equal(\"Selenium Pratice\")\n        //close browser\n        await driver.quit();",
               "err": {},
-              "uuid": "94a5fd84-f214-4162-8c60-4e89fde03813",
+              "uuid": "89def2e4-2f6d-44bf-895c-4da28bd7a27e",
               "parentUUID": null,
               "isHook": false,
               "skipped": false
@@ -95,7 +134,7 @@
               "title": "Add new test for report",
               "fullTitle": "add anothet todo tests Add new test for report",
               "timedOut": null,
-              "duration": 1326,
+              "duration": 1431,
               "state": "failed",
               "speed": null,
               "pass": false,
@@ -108,7 +147,7 @@
                 "estack": "AssertionError: expected 'Selenium Pratice' to equal 'Selenium '\n    at Context.<anonymous> (test\\secondtest.js:48:25)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)",
                 "diff": "- Selenium Pratice\n+ Selenium \n"
               },
-              "uuid": "5a475d4e-72c7-4222-a62d-c2db80635795",
+              "uuid": "e7c5530c-e6c4-4b04-a61f-be5f12f98526",
               "parentUUID": null,
               "isHook": false,
               "skipped": false
@@ -116,14 +155,14 @@
           ],
           "suites": [],
           "passes": [
-            "94a5fd84-f214-4162-8c60-4e89fde03813"
+            "89def2e4-2f6d-44bf-895c-4da28bd7a27e"
           ],
           "failures": [
-            "5a475d4e-72c7-4222-a62d-c2db80635795"
+            "e7c5530c-e6c4-4b04-a61f-be5f12f98526"
           ],
           "pending": [],
           "skipped": [],
-          "duration": 3482,
+          "duration": 4111,
           "root": false,
           "rootEmpty": false,
           "_timeout": null

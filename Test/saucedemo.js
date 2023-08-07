@@ -1,7 +1,5 @@
 const {Builder, By, Key} = require ("selenium-webdriver");
 const assert = require("assert");
-const { use } = require("chai");
-var should = require("chai").should();
 
 //describe  block
 describe("sauce demo", function(){
@@ -32,9 +30,7 @@ describe("sauce demo", function(){
         const currentUrl = await driver.getCurrentUrl();
         assert.strictEqual(currentUrl, 'https://www.saucedemo.com/inventory.html');
 
-        //get value backpack 
-        const backpack ='29.99';
-
+        // check out backpack
         await driver.findElement(By.id("add-to-cart-sauce-labs-backpack")).click()
         await driver.findElement(By.xpath("(//a[@class='shopping_cart_link'])[1]")).click()
         await driver.findElement(By.id("checkout")).click()
