@@ -5,9 +5,9 @@
     "passes": 2,
     "pending": 0,
     "failures": 1,
-    "start": "2023-08-07T13:18:56.243Z",
-    "end": "2023-08-07T13:18:59.594Z",
-    "duration": 3351,
+    "start": "2023-08-07T14:52:26.907Z",
+    "end": "2023-08-07T14:52:30.755Z",
+    "duration": 3848,
     "testsRegistered": 3,
     "passPercent": 66.66666666666666,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "fac49908-6b41-48ad-9e2f-a9d3ce5562a1",
+      "uuid": "2b08496f-c497-480a-ada7-33e4fc939af6",
       "title": "",
       "fullFile": "",
       "file": "",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "629a1e23-7e7b-495c-8b2a-4613cc75e545",
+          "uuid": "546cf5b4-8ff0-41c8-be35-ff10068151aa",
           "title": "add todo tests",
           "fullFile": "C:\\Users\\Admin\\seleniumdemo\\test\\firsttest.js",
           "file": "\\test\\firsttest.js",
@@ -38,7 +38,7 @@
               "title": "succses fully add on todo list",
               "fullTitle": "add todo tests succses fully add on todo list",
               "timedOut": null,
-              "duration": 1680,
+              "duration": 2106,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -47,7 +47,7 @@
               "context": null,
               "code": "//lauch brwoser \n        let driver = await new Builder().forBrowser(\"chrome\").build();\n        //navigate url \n        await driver.get(\"https://lambdatest.github.io/sample-todo-app/\")\n        // add a todo\n        await driver.findElement(By.id(\"sampletodotext\")).sendKeys(\"Selenium Pratice\", Key.RETURN);\n        //assertion\n        let todoText = await driver.findElement(By.xpath(\"//li[last()]\")).getText().then(function(value){\n            return value\n        });\n        //assert use chai should\n        todoText.should.equal(\"Selenium Pratice\")\n        //close browser\n        await driver.quit();",
               "err": {},
-              "uuid": "28f7423e-0e0f-4a4e-bc15-d48fb803d77e",
+              "uuid": "7d059ae7-4b72-482c-b74e-aa1b5912944b",
               "parentUUID": null,
               "isHook": false,
               "skipped": false
@@ -55,18 +55,18 @@
           ],
           "suites": [],
           "passes": [
-            "28f7423e-0e0f-4a4e-bc15-d48fb803d77e"
+            "7d059ae7-4b72-482c-b74e-aa1b5912944b"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 1680,
+          "duration": 2106,
           "root": false,
           "rootEmpty": false,
           "_timeout": null
         },
         {
-          "uuid": "3296e8bc-3b8d-4911-9c18-5a3a7ae5eedf",
+          "uuid": "76c44822-1e9a-4f07-9fc0-95b594843ee2",
           "title": "add anothet todo tests",
           "fullFile": "C:\\Users\\Admin\\seleniumdemo\\test\\secondtest.js",
           "file": "\\test\\secondtest.js",
@@ -77,7 +77,7 @@
               "title": "succses fully add another on todo list",
               "fullTitle": "add anothet todo tests succses fully add another on todo list",
               "timedOut": null,
-              "duration": 1776,
+              "duration": 2156,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -86,7 +86,7 @@
               "context": null,
               "code": "//lauch brwoser \n        let driver = await new Builder().forBrowser(\"chrome\").build();\n        //navigate url \n        await driver.get(\"https://lambdatest.github.io/sample-todo-app/\")\n        // add a todo\n        await driver.findElement(By.id(\"sampletodotext\")).sendKeys(\"Selenium Pratice\", Key.RETURN);\n        //assertion\n        let todoText = await driver.findElement(By.xpath(\"//li[last()]\")).getText().then(function(value){\n            return value\n        });\n        //assert use chai should\n        todoText.should.equal(\"Selenium Pratice\")\n        //close browser\n        await driver.quit();",
               "err": {},
-              "uuid": "f3154181-4cb3-4cff-9607-e8eaf10b297c",
+              "uuid": "94a5fd84-f214-4162-8c60-4e89fde03813",
               "parentUUID": null,
               "isHook": false,
               "skipped": false
@@ -95,7 +95,7 @@
               "title": "Add new test for report",
               "fullTitle": "add anothet todo tests Add new test for report",
               "timedOut": null,
-              "duration": 1279,
+              "duration": 1326,
               "state": "failed",
               "speed": null,
               "pass": false,
@@ -108,7 +108,7 @@
                 "estack": "AssertionError: expected 'Selenium Pratice' to equal 'Selenium '\n    at Context.<anonymous> (test\\secondtest.js:48:25)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)",
                 "diff": "- Selenium Pratice\n+ Selenium \n"
               },
-              "uuid": "a7a177a0-4ce1-4cdf-9829-f855bd1a1acf",
+              "uuid": "5a475d4e-72c7-4222-a62d-c2db80635795",
               "parentUUID": null,
               "isHook": false,
               "skipped": false
@@ -116,14 +116,14 @@
           ],
           "suites": [],
           "passes": [
-            "f3154181-4cb3-4cff-9607-e8eaf10b297c"
+            "94a5fd84-f214-4162-8c60-4e89fde03813"
           ],
           "failures": [
-            "a7a177a0-4ce1-4cdf-9829-f855bd1a1acf"
+            "5a475d4e-72c7-4222-a62d-c2db80635795"
           ],
           "pending": [],
           "skipped": [],
-          "duration": 3055,
+          "duration": 3482,
           "root": false,
           "rootEmpty": false,
           "_timeout": null
